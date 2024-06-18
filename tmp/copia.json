@@ -1,0 +1,115 @@
+{
+    "coches": [
+        {
+            "marca": "BMW",
+            "modelo": "Serie 3",
+            "year": 2020,
+            "precio": 30000,
+            "puertas": 4,
+            "color": "Blanco"
+        },
+        {
+            "marca": "Audi",
+            "modelo": "A4",
+            "year": 2020,
+            "precio": 40000,
+            "puertas": 4,
+            "color": "Negro"
+        },
+        {
+            "marca": "Ford",
+            "modelo": "Mustang",
+            "year": 2015,
+            "precio": 20000,
+            "puertas": 2,
+            "color": "Blanco"
+        },
+        {
+            "marca": "Audi",
+            "modelo": "A6",
+            "year": 2020,
+            "precio": 35000,
+            "puertas": 4,
+            "color": "Negro"
+        },
+        {
+            "marca": "BMW",
+            "modelo": "Serie 5",
+            "year": 2016,
+            "precio": 70000,
+            "puertas": 4,
+            "color": "Rojo"
+        },
+        {
+            "marca": "Mercedes",
+            "modelo": "Clase C",
+            "year": 2015,
+            "precio": 25000,
+            "puertas": 4,
+            "color": "Blanco"
+        },
+        {
+            "marca": "Chevrolet",
+            "modelo": "Camaro",
+            "year": 2018,
+            "precio": 60000,
+            "puertas": 2,
+            "color": "Rojo"
+        },
+        {
+            "marca": "Ford",
+            "modelo": "Mustang",
+            "year": 2019,
+            "precio": 80000,
+            "puertas": 2,
+            "color": "Rojo"
+        },
+        {
+            "marca": "Dodge",
+            "modelo": "Challenger",
+            "year": 2020,
+            "precio": 40000,
+            "puertas": 4,
+            "color": "Blanco"
+        },
+        {
+            "marca": "Tesla",
+            "modelo": "Model 3",
+            "year": 2021,
+            "precio": 45000,
+            "puertas": 4,
+            "color": "Azul"
+        },
+        {
+            "marca": "Citroen",
+            "modelo": "C4",
+            "year": "2018",
+            "precio": "9000",
+            "color": "Rojo"
+        },
+        {
+            "marca": "BMW",
+            "modelo": "Serie 9",
+            "year": "2022",
+            "precio": "70000",
+            "color": "Azul"
+        }
+    ],
+    "usuarios": [
+        {
+            "nombre": "Pepe",
+            "email": "pepe@correo.es",
+            "password": "1234"
+        },
+        {
+            "nombre": "Maria",
+            "email": "maria@correo.es",
+            "password": "1234"
+        },
+        {
+            "nombre": "Rosa",
+            "email": "rosa@correo.es",
+            "password": "1234"
+        }
+    ]
+}
