@@ -212,7 +212,7 @@ window.addEventListener("load", function () {
           loginButton.style.display = "none"; // Ocultar el botón de iniciar sesión
           logoutButton.style.display = "block"; // Mostrar el botón de cerrar sesión
           closeModal();
-          welcome.innerHTML = `Bienvenido ${usuario}`;
+          welcome.textContent = `Bienvenido ${usuario}`;
           header.style.backgroundColor = "lightgreen"; // Cambiar el color de fondo del header
         } else {
           alert(data.message);
