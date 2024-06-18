@@ -1,10 +1,10 @@
 window.addEventListener("load", function () {
   // Leer datos de sessionStorage
+  const welcome = document.getElementById("welcome");
   const usuario = sessionStorage.getItem("usuario");
-
+  welcome.textContent = ""; // Limpiar el mensaje de bienvenida
   if (usuario) {
-    welcome.innerHTML = `Bienvenido ${usuario}`;
-    header.style.backgroundColor = "lightgreen"; // Cambiar el color de fondo del header
+    welcome.textContent = `Bienvenido ${usuario}`;
   }
 
   // Esperar a que la página cargue completamente
@@ -19,7 +19,7 @@ window.addEventListener("load", function () {
   const modalContent = document.getElementById("modal-content");
   const modalTitle = document.getElementById("modalLoginLabel");
   const deleteButton = document.getElementById("delete");
-  const welcome = document.getElementById("welcome");
+  
   const header = document.getElementsByTagName("header")[0];
   const logoutButton = document.getElementById("logout"); // Botón de cerrar sesión
   const loginButton = document.getElementById("loginButton"); // Botón de iniciar sesión
@@ -207,6 +207,8 @@ window.addEventListener("load", function () {
           sessionStorage.setItem("token", data.token); // Asumiendo que el servidor devuelve un token
 
           // alert(data.message);
+          backup.style.display = "block"; // Mostrar el botón de backup
+          backupButton.style.display = "block"; // Mostrar el botón de backup
           loginButton.style.display = "none"; // Ocultar el botón de iniciar sesión
           logoutButton.style.display = "block"; // Mostrar el botón de cerrar sesión
           closeModal();
@@ -632,5 +634,56 @@ window.addEventListener("load", function () {
     setCookie("cookieConsent", "accepted", 30);
     cookieConsentContainer.style.display = "none";
   });
+
+  //FIN COOKIES*************************************************************
+  //backup  
+
+  // Creamos un botón para el backup visible cuando el usuario inicie sesión
+
+  const backupButton = document.createElement("button");  
+  backupButton.textContent = "Backup";
+  backupButton.className = "btn btn-primary";
+  backupButton.classList.add("mt-3");
+  const backup = document.getElementById("backup");
+  backup.appendChild(backupButton);
+
+  //Evento para guardar el backup y guardar pedidos
+  // backupButton.addEventListener("click", () => {
+  //   const rows = Array.from(tablaCarrito.querySelectorAll("tr"));
+  //   const carrito = rows.map((row) => {
+  //     const columns = row.querySelectorAll("td");
+  //     return {
+  //       marca: columns[0].textContent,
+  //       año: columns[1].textContent,
+  //       precio: columns[2].textContent,
+  //     };
+  //   });
+  //   localStorage.setItem("backup", JSON.stringify(carrito));
+  //   showAlert("Backup guardado con éxito", "success");
+  // });
+
+  function crearBackup() {
+    //Queremos crear un archivo detexto de respando con los datos de los usuarios contenidos en
+    //el directorio tmp/users.json
+
+    //solo queremos los datos del archivo JSON
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "../php/backup.php", true);
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+      }
+    };
+  }
+
+  backupButton.addEventListener("click", function (e){
+    e.preventDefault();
+    crearBackup();
+    showAlert("Backup guardado con éxito", "success");
+  });
+
 
 });
