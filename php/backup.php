@@ -17,4 +17,3 @@ file_put_contents($filename, $coches);
 
 //se envía un mensaje de éxito
 echo 'Backup realizado con éxito';
-?>
